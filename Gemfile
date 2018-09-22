@@ -21,7 +21,13 @@ else
   gem 'rails', '5.2.1'
 end
 
+#gem 'stanford-core-nlp'
+#gem 'nlp-pure'
+#gem 'open_nlp'
+
+gem 'json'
 gem 'bluecloth'
+gem 'chewy'
 gem 'dalli'
 gem 'devise'
 gem 'git_hub_bub'

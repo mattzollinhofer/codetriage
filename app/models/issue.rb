@@ -1,9 +1,13 @@
 class Issue < ActiveRecord::Base
+  update_index('issues#issue', :self )
+
   OPEN   = "open"
   CLOSED = "closed"
 
   validates :state, inclusion: { in: [OPEN, CLOSED] }
   belongs_to :repo
+
+  scope :open, -> { where(state: 'open') }
 
   def valid_for_user?(user, skip_update = Rails.env.test?)
     unless skip_update

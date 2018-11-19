@@ -1,6 +1,6 @@
 class ArticlesIndex < Chewy::Index
   define_type ::WikiArticle.all do |index|
-    field :title, type: 'text'
+    field :title, type: 'text', fielddata: true
     field :heading, type: 'text'
     field :body, type: 'text'
     field :read_time, type: 'integer', value: ->(article) { article.body.split(" ").size / 20 }
@@ -41,6 +41,17 @@ class ArticlesIndex < Chewy::Index
         significant_terms: {
           field: "categories",
           exclude: exclude
+        }
+      })
+      .aggs["significant_categories"]["buckets"]
+      .map{|x| puts "#{x['key']}: #{x['doc_count']}/#{x['bg_count']} -- #{x['score']}" }
+  end
+
+  def self.sig_title_terms_for_category(category)
+    query(terms: {categories: [category]})
+      .aggregations(significant_categories: {
+        significant_terms: {
+          field: "title"
         }
       })
       .aggs["significant_categories"]["buckets"]

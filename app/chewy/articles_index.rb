@@ -4,7 +4,9 @@ class ArticlesIndex < Chewy::Index
     field :heading, type: 'text'
     field :body, type: 'text'
     field :categories, type: :keyword, value: ->(article) { JSON.parse(article.category) }
-    #field :published_at, type: :datetime
+    field :created_at, type: :date
+    field :updated_at, type: :date
+    field :published_at, type: :date
   end
 
   def self.category(text)

@@ -3,6 +3,7 @@ class ArticlesIndex < Chewy::Index
     field :title, type: 'text'
     field :heading, type: 'text'
     field :body, type: 'text'
+    field :read_time, type: 'integer', value: ->(article) { article.body.split(" ").size / 20 }
     field :categories, type: :keyword, value: ->(article) { JSON.parse(article.category) }
     field :created_at, type: :date
     field :updated_at, type: :date

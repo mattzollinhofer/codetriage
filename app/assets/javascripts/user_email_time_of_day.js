@@ -1,6 +1,6 @@
 
 // Display options in select box in local time
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
 
   $("#user_email_time_of_day option")
     .toArray()

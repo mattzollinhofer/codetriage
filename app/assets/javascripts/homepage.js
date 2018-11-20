@@ -1,6 +1,6 @@
 // JS for the buttons on the home page
-$(document).ready(function(){
-  $(".types-filter-button").click(function() {
+document.addEventListener("turbolinks:load", function() {
+  $(".main-application").on('click', ".types-filter-button", function() {
     $(".types-filter").toggle();
   });
 

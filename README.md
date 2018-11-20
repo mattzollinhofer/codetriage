@@ -88,6 +88,16 @@ $ heroku local -f Procfile.development
 
 CodeTriage should now be running at [http://localhost:3000](http://localhost:3000)
 
+### Optional docker setup (alternative to Heroku and redis setup)
+
+Install your app using [Docker](https://docs.docker.com/compose/overview/).
+
+```shell
+$ docker-compose up -d
+```
+
+This will start redis, your app, and sidekiq workers. You will still need to set up and install
+postgres.
 
 ## Tests
 

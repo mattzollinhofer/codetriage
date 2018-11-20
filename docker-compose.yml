@@ -1,0 +1,17 @@
+version: '3'
+services:
+  redis:
+    image: redis
+  web:
+    build: .
+    ports:
+     - "3000:3000"
+    depends_on:
+     - redis
+  worker:
+    command: "bundle exec sidekiq -q default -q mailers -c ${SIDEKIQ_CONCURRENCY:-5}"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    image: codetriage_web
+    depends_on:
+     - redis

@@ -10,6 +10,10 @@
 
 hr.section-break
 
+div data-controller="hello"
+  input data-target="hello.name" type="text"
+  button data-action="click->hello#greet" Greet
+
 - if @repos_subs.present?
   .repos-list-wrapper
     h2.repos-list-title Repos you are currently helping

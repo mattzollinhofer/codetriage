@@ -24,6 +24,9 @@
 //= require user_email_time_of_day.js
 //= require raven.js
 //= require turbolinks
+//= require stimulus
+
+//= require controllers/hello_controller.es6
 
 Raven.config("<%= ENV['SENTRY_DSN_PUBLIC'] %>", {
   release: "<%= Raven.configuration.release %>",
@@ -34,3 +37,5 @@ Raven.config("<%= ENV['SENTRY_DSN_PUBLIC'] %>", {
       /Blocked a frame with origin/,
     ]
 }).install();
+
+// window.application = Stimulus.Application.start()

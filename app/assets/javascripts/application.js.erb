@@ -23,6 +23,7 @@
 //= require homepage.js
 //= require user_email_time_of_day.js
 //= require raven.js
+//= require turbolinks
 
 Raven.config("<%= ENV['SENTRY_DSN_PUBLIC'] %>", {
   release: "<%= Raven.configuration.release %>",

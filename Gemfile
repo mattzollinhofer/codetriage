@@ -25,6 +25,7 @@ end
 #gem 'nlp-pure'
 #gem 'open_nlp'
 
+gem 'turbolinks', '~> 5.2.0'
 gem 'json'
 gem 'bluecloth'
 gem 'chewy'

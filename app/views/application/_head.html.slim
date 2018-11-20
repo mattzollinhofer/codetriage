@@ -16,7 +16,7 @@ head
 
   meta name="description" content="#{ @meta_description || 'The easiest way to get started contributing to open source projects.' }"
 
-  = javascript_include_tag "application", async: true
+  = javascript_include_tag "application"
 
   - if Rails.env.production?
     /! google analytics

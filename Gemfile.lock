@@ -391,6 +391,9 @@ GEM
     tilt (2.0.8)
     trollop (2.1.2)
     ttfunk (1.5.1)
+    turbolinks (5.2.0)
+      turbolinks-source (~> 5.2)
+    turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -494,6 +497,7 @@ DEPENDENCIES
   stackprof
   teaspoon
   the_lone_dyno
+  turbolinks (~> 5.2.0)
   uglifier (>= 1.0.3)
   valid_email
   vcr

@@ -47,11 +47,14 @@ class ArticlesIndex < Chewy::Index
       .map{|x| puts "#{x['key']}: #{x['doc_count']}/#{x['bg_count']} -- #{x['score']}" }
   end
 
-  def self.sig_title_terms_for_category(category)
+  def self.sig_title_terms_for_category(category, background)
     query(terms: {categories: [category]})
       .aggregations(significant_categories: {
         significant_terms: {
-          field: "title"
+          field: "title",
+          background_filter: {
+            terms: { categories: [background] }
+          }
         }
       })
       .aggs["significant_categories"]["buckets"]

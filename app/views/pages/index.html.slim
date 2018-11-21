@@ -19,19 +19,21 @@ hr.section-break
   hr.section-break
 
 .repos-list-wrapper
-  h2.repos-list-title Open source projects on GitHub that need your help.
+  h2.repos-list-title name="filter-anchor" id="filter-anchor"  Open source projects on GitHub that need your help.
   - lang_index = 0
-  .types-filter-wrapper
+  .types-filter-wrapper data-controller='language-filter'
     label.types-filter-label Filter list<span> by Language</span>:
     = render "down"
-    a.types-filter-button
+    a.types-filter-button data-action="language-filter#toggleList"
       = params["language"] || "Select Language"
 
-    ul.types-filter
+    ul.types-filter.hide data-target="language-filter.list"
       = cache(:language_list, expires_in: 1.hour) do
         - Repo.select("DISTINCT language").map(&:language).compact.sort.each do |lang|
           - unless lang.nil?
-            li = link_to lang, "#", data: { toggle: "tab", language: lang }
+            li = link_to lang,
+                         root_path(language: lang, anchor: 'filter-anchor'),
+                         { data: { action: "language-filter#toggleList", language: lang } }
 
   section.repo-list-with-pagination
     = render "repos_with_pagination", repos: @repos

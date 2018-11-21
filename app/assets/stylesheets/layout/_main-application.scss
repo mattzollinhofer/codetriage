@@ -4,4 +4,12 @@
   @include media(26rem) {
     padding: $base-spacing;
   }
+
+  .show{
+    display: initial;
+  }
+
+  .hide{
+    display: none;
+  }
 }

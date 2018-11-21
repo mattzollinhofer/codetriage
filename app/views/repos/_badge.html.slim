@@ -1,22 +1,22 @@
 - code_triagers_badge_url = File.join(repo_url(@repo), "badges/users.svg")
 
-ul.accordion-tabs
-  li.tab-header-and-content
-    a.is-active.tab-link href="javascript:void(0)" Image URL
+ul.accordion-tabs data-controller="tabs"
+  li.tab-header-and-content data-action="click->tabs#activate" data-target="tabs.tab" data-tabs-activated=true
+    a.tab-link href="javascript:void(0)" Image URL
     .tab-content.is-open
       textarea.single-line
         = code_triagers_badge_url
-  li.tab-header-and-content
+  li.tab-header-and-content data-action="click->tabs#activate" data-target="tabs.tab"
     a.tab-link href="javascript:void(0)" Markdown
     .tab-content
       textarea.single-line
         | [![Open Source Helpers](#{code_triagers_badge_url})](#{repo_url(@repo)})
-  li.tab-header-and-content
+  li.tab-header-and-content data-action="click->tabs#activate" data-target="tabs.tab"
     a.tab-link href="javascript:void(0)" Textile
     .tab-content
       textarea.single-line
         | !#{code_triagers_badge_url}!:#{repo_url(@repo)}
-  li.tab-header-and-content
+  li.tab-header-and-content data-action="click->tabs#activate" data-target="tabs.tab"
     a.tab-link href="javascript:void(0)" Rdoc
     .tab-content
       textarea.single-line

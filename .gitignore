@@ -35,4 +35,8 @@ public/assets
 vendor/bundle
 tags
 
-config/secrets.yml.key
+config/secrets.yml.key/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity

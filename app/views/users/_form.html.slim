@@ -27,8 +27,9 @@
       span.add-on
         i.icon-envelope
       = f.select :email_time_of_day,
-          options_for_select(available_times_of_day.map { |time| [time.to_formatted_s(:time_only_with_zone), time.to_formatted_s(:iso8601)] }, f.object.email_time_of_day&.to_formatted_s(:iso8601)),
-          class: 'select'
+        options_for_select(available_times_of_day.map { |time| [time.to_formatted_s(:time_only_with_zone), time.to_formatted_s(:iso8601)] }, f.object.email_time_of_day&.to_formatted_s(:iso8601)),
+          {},
+          {class: 'select', 'data-controller': 'time-localizer'}
 
   = f.label :daily_issue_limit, t("activerecord.attributes.user.daily_issue_limit", default: "Max # of issues you want to receive per day"), class: "label label-info"
   .input

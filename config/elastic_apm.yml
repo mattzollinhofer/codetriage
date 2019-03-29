@@ -1,0 +1,4 @@
+server_url: 'http://localhost:8100'
+secret_token: ''
+log_path: 'log/elastic_apm.log'
+log_level: 0

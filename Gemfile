@@ -20,10 +20,15 @@ if ENV["RAILS_MASTER"] == '1'
 else
   gem 'rails', '5.2.1'
 end
+gem 'pry-rails'
+gem 'pry-byebug'
+
 
 #gem 'stanford-core-nlp'
 #gem 'nlp-pure'
 #gem 'open_nlp'
+
+gem 'tailwindcss', '~> 0.2.0'
 
 gem 'turbolinks', '~> 5.2.0'
 gem 'json'
@@ -88,6 +93,7 @@ group :development, :test do
 end
 
 gem 'rack-mini-profiler'
+gem 'flamegraph'
 
 gem 'the_lone_dyno'
 
@@ -104,7 +110,8 @@ gem 'sprockets-rails'
 
 gem 'babel-transpiler'
 
-gem 'scout_apm', '~> 2.4.16'
+# gem 'scout_apm', '~> 2.4.16'
+gem 'elastic-apm'
 gem 'yard', '~> 0.9.12'
 
 gem 'oj'

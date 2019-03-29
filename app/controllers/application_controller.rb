@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   before_action do
     if current_user && current_user.admin?
-      Rack::MiniProfiler.authorize_request
+      # Rack::MiniProfiler.authorize_request
     end
   end
 

@@ -13,7 +13,7 @@
         = link_to 'Edit Account'.html_safe, edit_user_path(@user), class: 'header-primary-action'
 
     section.user-settings.content-section
-      h2.content-section-title Settings
+      h2.mjz.content-section-title Settings
 
       ul.slats-list
         li.slats-item
@@ -30,6 +30,7 @@
                 = link_to "Go public", user_registration_path(user: {private: false}), method: :patch
         li.slats-item
           .slats-hgroup
+            = render "testing"
             h3.slats-title Email frequency:
           .slats-action
             p= @user.email_frequency.presence || 'not set'

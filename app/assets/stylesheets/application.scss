@@ -6,3 +6,11 @@
 @import "layout/*";
 @import "components/*";
 @import "markdown";
+
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
+
+.mjz{
+  color: red;
+}

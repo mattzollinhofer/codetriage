@@ -4,4 +4,5 @@ test:
   host: 'localhost:9250'
   prefix: 'test'
 development:
-  host: 'localhost:9200'
+  #host: 'localhost:9200'
+  host: 'http://35.245.251.97:9200'
